@@ -1,0 +1,92 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
+}
+
+.dropZone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  margin-bottom: 2rem;
+}
+
+.dropZone:hover {
+  border-color: #fb7185;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.fileList {
+  margin-bottom: 2rem;
+}
+
+.fileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  /* border: 1px solid #eee; */
+  /* border-radius: 4px; */
+  margin-bottom: 0.5rem;
+}
+
+.removeBtn {
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mergeButton {
+  background-color: #0070f3;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mergeButton:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.mergeButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.downloadSection {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.downloadButton {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.downloadButton:hover {
+  background-color: #218838;
+}
