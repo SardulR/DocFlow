@@ -6,7 +6,17 @@ import LoadingBar from "@/components/LoadingBar";
 const poppinsSans = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+  ],
 });
 
 export const metadata: Metadata = {
@@ -20,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={` ${poppinsSans.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppinsSans.className} antialiased`}>
         <LoadingBar />
         {children}
       </body>
