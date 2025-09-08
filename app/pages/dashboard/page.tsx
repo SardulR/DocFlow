@@ -164,6 +164,14 @@ const tools = [
     ),
     href: "/pdf-word",
   },
+   {
+    name: "Word to PDF",
+    description: "Convert your Word document into an PDF file.",
+    icon: (
+      <FileText className="h-12 w-12 text-rose-500 group-hover:text-white transition-colors duration-300" />
+    ),
+    href: "/word-to-pdf",
+  },
 ];
 
 const ToolCard = ({ name, description, icon, href }: ToolCardProps) => (

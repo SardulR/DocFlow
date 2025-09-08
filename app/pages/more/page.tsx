@@ -217,30 +217,30 @@ const MoreToolsPage = () => {
             Explore our full suite of powerful and easy-to-use tools.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tools.map((tool) => (
-              <Link key={tool.href} href={`/pages/${tool.href}`}>
-                <div className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105 cursor-pointer border border-gray-200 h-full">
-                  <div className="flex-shrink-0 mb-4">{tool.icon}</div>
-                  <h2 className="text-lg font-extrabold uppercase text-zinc-800">
-                    {tool.name}
-                  </h2>
-                  <p className="text-sm text-center text-gray-500 mt-2 font-medium uppercase line-clamp-2 min-h-[40px]">
-                    {tool.description}
-                  </p>
-                  <Button
-                    variant="link"
-                    asChild
-                    className="mt-4 text-black font-semibold uppercase text-sm group"
-                  >
-                    <Link href={`/pages/${tool.href}`}>
-                      Go to tool
-                      <ChevronRightIcon className="h-4 w-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                </div>
-              </Link>
-            ))}
-          </div>
+  {tools.map((tool) => (
+    <Link
+      key={tool.href}
+      href={`/pages/${tool.href}`}
+      className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105 cursor-pointer border border-gray-200 h-full"
+    >
+      <div className="flex-shrink-0 mb-4">{tool.icon}</div>
+      <h2 className="text-lg font-extrabold uppercase text-zinc-800">
+        {tool.name}
+      </h2>
+      <p className="text-sm text-center text-gray-500 mt-2 font-medium uppercase line-clamp-2 min-h-[40px]">
+        {tool.description}
+      </p>
+      <Button
+        variant="link"
+        className="mt-4 text-black font-semibold uppercase text-sm group pointer-events-none"
+      >
+        Go to tool
+        <ChevronRightIcon className="h-4 w-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
+      </Button>
+    </Link>
+  ))}
+</div>
+
         </section>
       </main>
       <Footer />
