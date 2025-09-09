@@ -77,7 +77,7 @@
     "pdf2json": "^3.2.0",
     "pdf2pic": "^3.2.0",
     "pdf2table": "^0.0.2",
-    "pdfjs-dist": "^5.4.54",
+    "pdfjs-dist": "^3.11.174",
     "react": "^19.1.1",
     "react-day-picker": "^9.9.0",
     "react-dom": "^19.1.1",

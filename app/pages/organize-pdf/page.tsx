@@ -162,21 +162,23 @@ export default function PDFOrganizer() {
   );
 
   // Load PDF.js library and set worker source
-  useEffect(() => {
-    const loadPdfjs = async () => {
-      try {
-        // const pdfjsLib = await import("pdfjs-dist/build/pdf");
-        const pdfjsLib = require("pdfjs-dist/build/pdf") as any;
-        const typedPdfJsLib = pdfjsLib as unknown as PdfJs;
-        typedPdfJsLib.GlobalWorkerOptions.workerSrc = `/pdfjs-dist/build/pdf.worker.min.mjs`;
-        setPdfjs(typedPdfJsLib);
-      } catch (error) {
-        console.error("Failed to load PDF.js:", error);
-        setError("Failed to load PDF viewer. Please refresh the page.");
-      }
-    };
-    loadPdfjs();
-  }, []);
+useEffect(() => {
+  const loadPdfjs = async () => {
+    try {
+      const pdfjsLib = await import("pdfjs-dist");
+      
+      // Use CDN for worker - more reliable for production
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 
+        `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+      
+      setPdfjs(pdfjsLib as unknown as PdfJs);
+    } catch (error) {
+      console.error("Failed to load PDF.js:", error);
+      setError("Failed to load PDF viewer. Please refresh the page.");
+    }
+  };
+  loadPdfjs();
+}, []);
 
   // Clean up object URLs to prevent memory leaks
   useEffect(() => {

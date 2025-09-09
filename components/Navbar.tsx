@@ -1,10 +1,10 @@
 "use client";
-
+import Image from "next/image";
 import {
   Edit3Icon,
   HomeIcon,
   ImageIcon,
-  LucideHopOff,
+  // LucideHopOff,
   MergeIcon,
   MoveDownRightIcon,
   MenuIcon,
@@ -62,10 +62,16 @@ const Navbar = () => {
   const path = usePathname();
 
   return (
-    <section className="flex items-center justify-between py-4 px-4 md:px-10 border-b-2 border-[#e8e8e8] sticky top-0 z-50 bg-white">
+ <section className="flex items-center justify-between py-4 px-4 md:px-10 border-b-2 border-[#e8e8e8] sticky top-0 z-50 bg-white">
       {/* Logo Section */}
       <div className="flex items-center gap-2 text-sm font-semibold uppercase">
-        <Shredder className="text-rose-400" /> DocFlow
+        <Image
+          src="/icon.png"   
+          alt="DocFlow Logo"
+          width={24}        
+          height={24}
+        />
+        DocFlow
       </div>
 
       {/* Desktop Navigation */}
